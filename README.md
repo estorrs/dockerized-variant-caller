@@ -27,6 +27,21 @@ $: docker build -t <user>:dockerized-variant-caller:<tag> .
 $: docker push <user>/dockerized-variant-caller:<tag>
 ```
 
+## Running the docker image
+Running on a fake dataset
+```bash
+$: docker run -it -v dockerized-variant-caller /bin/bash
+$: python dockerized-variant-caller/dockerized-variant-caller.py --reference-fasta tests/data/synthetic/synthetic.fa --output-vcf output.vcf tests/data/synthetic/synthetic.bam
+```
+
+Running with mapped inputs
+Since Docker cannot see outside file system. To run this tool on real data you need to mount volumes to the container.
+```bash
+$: docker run -it -v /system/path/to/bam:/container/path/to/bam -v /system/path/to/reference:/container/path/to/reference -v /system/path/to/output/directory:/container/path/to/output/directory dockerized-variant-caller /bin/bash
+$: python dockerized-variant-caller/dockerized-variant-caller.py --reference-fasta /container/path/to/reference --output-vcf /container/path/to/output/directory/output.vcf /container/path/to/bam
+```
+
+
 ## Testing
 
 To run basic tests in one liner
@@ -52,9 +67,3 @@ Must run this command from repository root
 $: bash cwl/tests/run_test.sh
 ```
 
-## Running with mapped inputs
-
-```bash
-$: docker run -it -v /system/path/to/bam:/container/path/to/bam -v /system/path/to/reference:/container/path/to/reference -v /system/path/to/output/directory:/container/path/to/output/directory dockerized-variant-caller /bin/bash
-$: python dockerized-variant-caller/dockerized-variant-caller.py --reference-fasta /container/path/to/reference --output-vcf /container/path/to/output/directory/output.vcf /container/path/to/bam
-```
