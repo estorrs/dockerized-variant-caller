@@ -1,5 +1,5 @@
 # dockerized-variant-caller
-An example repository structure of a dockerized tool.
+An example skeleton of a dockerized tool.
 
 ## To build docker image
 
