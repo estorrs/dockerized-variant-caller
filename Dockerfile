@@ -1,8 +1,20 @@
-FROM python:3.6
+# inherit from Ubuntu
+# you can inherit from any docker container
+# this is useful if there is already a docker container available for a tool and you just need to \
+# add some extra stuff
+FROM ubuntu:18.04
 
+# install some tool dependencies
 RUN apt-get update && apt-get install -y \
+    wget \
     vim \
     unzip
+
+####################################################################################################
+# Here we use miniconda to install some dependencies. If you're trying to keep image size down \   #
+# this is not advisable. But if you don't care about image size it makes installing tools really \ #
+# easy.                                                                                            #
+####################################################################################################
 
 # set up miniconda
 RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh \
@@ -17,7 +29,7 @@ RUN conda config --add channels defaults \
 # install necessary tools available through conda
 RUN conda install -y picard samtools pytest
 
-# install gatk
+# install gatk4
 RUN wget https://github.com/broadinstitute/gatk/releases/download/4.0.12.0/gatk-4.0.12.0.zip \
     && unzip gatk-4.0.12.0.zip
 

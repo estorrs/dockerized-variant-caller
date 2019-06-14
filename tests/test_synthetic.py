@@ -13,7 +13,7 @@ def test_haplotype_caller():
     
     results = subprocess.check_output(tool_args).decode('utf-8')
 
-    # just make sure we get here
+    # for this demo just make sure we don't error out during tool execution
     assert True
 
 def test_call_with_variant_filter():
@@ -25,5 +25,5 @@ def test_call_with_variant_filter():
     
     results = subprocess.check_output(tool_args).decode('utf-8')
 
-    # just make sure we get here
+    # for this demo just make sure we don't error out during tool execution
     assert True
