@@ -60,13 +60,15 @@ docker run -it dockerized-variant-caller /bin/bash
 pytest tests/test_synthetic.py -vv
 ```
 
-Run more realistic test case that requires mapping a reference fasta
+Run more realistic test case that requires mapping a reference fasta.
+Assumes you're on denali. But you can run from anywhere. Just change the reference filepath.
+Reference used is at ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/phase2_reference_assembly_sequence/hs37d5.fa.gz
 ```bash
-docker run -it -v /path/to/reference/fasta:/data/hs37d5.fa dockerized-variant-caller pytest tests/test_real.py
+docker run -it -v /diskmnt/Projects/Users/estorrs/data/1000-genomes/hs37d5.fa:/data/hs37d5.fa dockerized-variant-caller pytest tests/test_real.py
 ```
 
 To run cwl pipeline on synthetic test data
-Must be on a machine that has rabbix executor installed.
+Must be on a machine that has rabbix executor installed. Can be easily adapted to another executor such as Cromwell if desired.
 Must run this command from repository root
 ```bash
 bash cwl/tests/run_test.sh
