@@ -61,7 +61,7 @@ pytest tests/test_synthetic.py -vv
 ```
 
 Run more realistic test case that requires mapping a reference fasta.
-Assumes you're on denali. But you can run from anywhere. Just change the reference filepath.
+Assumes you're on denali or katmai. But you can run from anywhere. Just change the reference filepath.
 Reference used is at ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/phase2_reference_assembly_sequence/hs37d5.fa.gz
 ```bash
 docker run -v /diskmnt/Projects/Users/estorrs/data/1000-genomes/hs37d5.fa:/data/hs37d5.fa dockerized-variant-caller pytest tests/test_real.py -vv
