@@ -46,9 +46,16 @@ docker run -it -v /system/path/to/bam:/container/path/to/bam -v /system/path/to/
 python dockerized-variant-caller/dockerized-variant-caller.py --reference-fasta /container/path/to/reference --output-vcf /container/path/to/output/directory/output.vcf /container/path/to/bam
 ```
 
-## Running the dockerized tool via script
+## Running the tool via script
 ```bash
 bash demo/example.sh
+```
+
+## Running the tool as a CWL tool
+To run cwl pipeline on synthetic test data
+Must be on a machine that has rabbix executor installed. Can be easily adapted to another executor, such as Cromwell, if desired.
+```bash
+bash cwl/tests/run_test.sh
 ```
 
 ## Testing
@@ -69,12 +76,5 @@ Assumes you're on denali or katmai. But you can run from anywhere. Just change t
 Reference used is at ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/phase2_reference_assembly_sequence/hs37d5.fa.gz
 ```bash
 docker run -v /diskmnt/Projects/Users/estorrs/data/1000-genomes/hs37d5.fa:/data/hs37d5.fa dockerized-variant-caller pytest tests/test_real.py -vv
-```
-
-To run cwl pipeline on synthetic test data
-Must be on a machine that has rabbix executor installed. Can be easily adapted to another executor such as Cromwell if desired.
-Must run this command from repository root
-```bash
-bash cwl/tests/run_test.sh
 ```
 
