@@ -1,2 +1,7 @@
 *.pyc
+*.bai
+*.fai
+*.dict
+
+cwl/tests/test_results/
 
