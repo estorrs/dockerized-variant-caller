@@ -4,4 +4,5 @@
 *.dict
 
 cwl/tests/test_results/
+tests/outputs
 
