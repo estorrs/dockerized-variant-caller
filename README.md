@@ -1,5 +1,5 @@
 # dockerized-variant-caller
-An example repository structure of a dockerized tool.
+An example skeleton of a dockerized tool.
 
 ## To build docker image
 
@@ -35,7 +35,7 @@ docker pull <user>/dockerized-variant-caller:<tag>
 ## Running the docker image
 Running on a fake dataset
 ```bash
-docker run -it -v dockerized-variant-caller /bin/bash
+docker run -it dockerized-variant-caller /bin/bash
 python dockerized-variant-caller/dockerized-variant-caller.py --reference-fasta tests/data/synthetic/synthetic.fa --output-vcf output.vcf tests/data/synthetic/synthetic.bam
 ```
 
