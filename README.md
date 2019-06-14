@@ -46,7 +46,7 @@ docker run -it -v /system/path/to/bam:/container/path/to/bam -v /system/path/to/
 python dockerized-variant-caller/dockerized-variant-caller.py --reference-fasta /container/path/to/reference --output-vcf /container/path/to/output/directory/output.vcf /container/path/to/bam
 ```
 
-## Running the tool via script
+## Directly running the tool from a script
 ```bash
 bash demo/example.sh
 ```
