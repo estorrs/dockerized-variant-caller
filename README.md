@@ -32,7 +32,7 @@ To pull container from registry
 docker pull <user>/dockerized-variant-caller:<tag>
 ```
 
-## Running the docker image
+## Running the tool from inside docker container
 Running on a fake dataset
 ```bash
 docker run -it dockerized-variant-caller /bin/bash
@@ -46,6 +46,10 @@ docker run -it -v /system/path/to/bam:/container/path/to/bam -v /system/path/to/
 python dockerized-variant-caller/dockerized-variant-caller.py --reference-fasta /container/path/to/reference --output-vcf /container/path/to/output/directory/output.vcf /container/path/to/bam
 ```
 
+## Running the dockerized tool via script
+```bash
+bash demo/example.sh
+```
 
 ## Testing
 
