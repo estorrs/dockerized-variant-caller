@@ -1,0 +1,7 @@
+filter_variants: true
+reference_fasta:
+  class: File
+  path: ../../tests/data/synthetic/synthetic.fa
+input_bam:
+  class: File
+  path: ../../tests/data/synthetic.bam

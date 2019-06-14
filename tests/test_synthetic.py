@@ -2,8 +2,8 @@ import subprocess
 
 import pytest
 
-REFERENCE_FASTA = '/data/hs37d5.fa'
-TEST_BAM = 'tests/data/test.bam'
+REFERENCE_FASTA = 'tests/data/synthetic/synthetic.fa'
+TEST_BAM = 'tests/data/synthetic/synthetic.bam'
 
 def test_haplotype_caller():
     tool_args = ['python', 'dockerized-variant-caller/dockerized-variant-caller.py',
