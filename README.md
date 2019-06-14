@@ -5,7 +5,7 @@ An example repository structure of a dockerized tool.
 
 Navigate to the root of the repository and run
 ```bash
-$: docker build -t dockerized-variant-caller .
+docker build -t dockerized-variant-caller .
 ```
 
 To build a container with a specific tag
