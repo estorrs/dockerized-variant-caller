@@ -39,7 +39,7 @@ docker run -it dockerized-variant-caller /bin/bash
 python dockerized-variant-caller/dockerized-variant-caller.py --reference-fasta tests/data/synthetic/synthetic.fa --output-vcf output.vcf tests/data/synthetic/synthetic.bam
 ```
 
-Running with mapped inputs
+Running with mapped inputs.
 Since Docker cannot see outside file system. To run this tool on real data you need to mount volumes to the container.
 ```bash
 docker run -it -v /system/path/to/bam:/container/path/to/bam -v /system/path/to/reference:/container/path/to/reference -v /system/path/to/output/directory:/container/path/to/output/directory dockerized-variant-caller /bin/bash
